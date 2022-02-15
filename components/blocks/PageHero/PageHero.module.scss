@@ -1,0 +1,63 @@
+// COMPONENT [ HERO BLOCK ] ###########################################################################################
+@import "scss/.base/module-index";
+
+.oPageHeroBlock {
+  position: relative;
+
+  // A. GLOBAL STYLES +++++++++++++++++++++++++++++++++++++
+
+  .oBackgroundBlock {
+    overflow: hidden;
+    max-height: 300px;
+    .aImage {
+      width: 100%;
+      height: auto;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .oBlockBody {
+    @include vertical-align(absolute);
+    width: 100%;
+  }
+
+  // A. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // B. GRACEFUL DEGRADATION ++++++++++++++++++++++++++++++
+
+  @media ($ss-dn) {
+    .oBackgroundBlock {
+      max-height: none;
+      .aImage {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+
+  // B. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // C. MIN-WIDTH: 768px ++++++++++++++++++++++++++++++++++
+
+  @media ($sm-up) {
+  }
+
+  // C. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // D. MIN-WIDTH: 992px ++++++++++++++++++++++++++++++++++
+
+  @media ($md-up) {
+  }
+
+  // D. END +++++++++++++++++++++++++++++++++++++++++++++++
+
+  // E. MIN-WIDTH: 1200px +++++++++++++++++++++++++++++++++
+
+  @media ($lg-up) {
+  }
+
+  // E. END +++++++++++++++++++++++++++++++++++++++++++++++
+}
+
+// END OF FILE ########################################################################################################
