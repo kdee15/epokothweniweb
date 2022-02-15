@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,6 +19,11 @@ export default function Home({ Pages, Podcasts, Services, Footer }) {
   const footerMenuLinks = Footer.footerMenu1;
   const footerMenuIcons = Footer.showIcon;
   const footerMenuText = Footer.showIconLinkText;
+
+  const [isExternal, setIsExternal] = useState(false);
+  const handleToggle = () => {
+    setIsExternal(!isExternal);
+  };
 
   return (
     <Layout title="Homepage" description="Podcasts Website Homepage">
@@ -143,7 +148,7 @@ export default function Home({ Pages, Podcasts, Services, Footer }) {
                     <Link href={socialLink.URL}>
                       {footerMenuIcons ? (
                         <a
-                          target={socialLink.isExternal}
+                          target={`_blank`}
                           className={`${classes.mLink} m-link`}
                           rel={`noopener`}
                         >
@@ -167,7 +172,7 @@ export default function Home({ Pages, Podcasts, Services, Footer }) {
                           )}
                         </a>
                       ) : (
-                        <a target={socialLink.isExternal}>
+                        <a target={`_blank`}>
                           <span className={`${classes.aLinkText} a-link-text`}>
                             {socialLink.title}
                           </span>
@@ -188,7 +193,7 @@ export default function Home({ Pages, Podcasts, Services, Footer }) {
                   <li key={footerMenuLink.id} className={`aListItem`}>
                     <Link href={footerMenuLink.href}>
                       <a
-                        target={footerMenuLink.isExternal}
+                        target={`_blank`}
                         className={`aFooterLink a-fnt-16s`}
                         rel={`noopener`}
                       >
